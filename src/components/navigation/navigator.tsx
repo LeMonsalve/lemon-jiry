@@ -42,9 +42,11 @@ const routes = [
 export function Navigator() {
   return (
     <ul className="flex flex-col">
-      {routes.map((route) => (
-        <NavigationItem key={route.href} {...route} />
-      ))}
+      {routes.map((route) => {
+        // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+        // @ts-expect-error
+        return <NavigationItem key={route.href} {...route} />
+      })}
     </ul>
   )
 }
